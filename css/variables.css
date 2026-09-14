@@ -1,11 +1,11 @@
 /* =========================================================
    THE GROOT OOTY — Design Tokens & Variables
-   Theme: Strict White & Mantis Green (#74C365)
+   Theme: Strict White & Lime Green (#9FCF49)
    ========================================================= */
 
 :root {
   /* --- Primary Brand Color (Secondary / Accents / Cards) --- */
-  --color-mantis:          #74C365;
+  --color-mantis:          #9FCF49;
   
   /* --- Global Backgrounds (Primary Color = WHITE) --- */
   --bg-primary:            #FFFFFF;
@@ -14,15 +14,15 @@
   --bg-light:              #FFFFFF;
   --bg-dark:               #FFFFFF;
 
-  /* --- Surface / Card Colors (Mantis Green #74C365) --- */
-  --card-bg:               #74C365;
-  --card-bg-elevated:      #74C365;
-  --color-forest-deep:     #74C365;
-  --color-forest:          #74C365;
-  --color-forest-card:     #74C365;
-  --color-forest-surface:  #74C365;
-  --color-charcoal:        #74C365;
-  --color-charcoal-soft:   #74C365;
+  /* --- Surface / Card Colors (Groot Green #9FCF49) --- */
+  --card-bg:               #9FCF49;
+  --card-bg-elevated:      #9FCF49;
+  --color-forest-deep:     #9FCF49;
+  --color-forest:          #9FCF49;
+  --color-forest-card:     #9FCF49;
+  --color-forest-surface:  #9FCF49;
+  --color-charcoal:        #9FCF49;
+  --color-charcoal-soft:   #9FCF49;
 
   /* --- Neutral Dark Accent (For Text & Headings on White) --- */
   --color-obsidian:        #111111;
@@ -30,8 +30,8 @@
   --color-cream-warm:      #FFFFFF;
   --color-warm-white:      #FFFFFF;
   --color-linen:           #FFFFFF;
-  --color-bronze:          #74C365;
-  --color-bronze-light:    #74C365;
+  --color-bronze:          #9FCF49;
+  --color-bronze-light:    #9FCF49;
   --color-gold:            #FFFFFF;
   --color-gold-subtle:     transparent;
   --color-gold-glow:       transparent;
@@ -46,7 +46,7 @@
   --text-dark:             #111111;
   --text-dark-secondary:   rgba(17, 17, 17, 0.80);
 
-  /* On Mantis Green Cards & Surfaces */
+  /* On Green Cards & Surfaces */
   --card-border:           rgba(255, 255, 255, 0.35);
   --card-border-subtle:    rgba(255, 255, 255, 0.20);
   --card-text:             #FFFFFF;
@@ -57,18 +57,18 @@
   --text-on-image-muted:   rgba(255, 255, 255, 0.88);
 
   /* --- Interactive Buttons --- */
-  --btn-primary-bg:        #74C365;
+  --btn-primary-bg:        #9FCF49;
   --btn-primary-text:      #FFFFFF;
-  --btn-primary-hover:     #5ebd4e;
-  --btn-outline-border:    #74C365;
-  --btn-outline-text:      #74C365;
-  --btn-outline-hover-bg:  #74C365;
+  --btn-primary-hover:     #8EBF3E;
+  --btn-outline-border:    #9FCF49;
+  --btn-outline-text:      #9FCF49;
+  --btn-outline-hover-bg:  #9FCF49;
   --btn-outline-hover-text:#FFFFFF;
 
   /* --- Borders & Shadows --- */
   --border-dark:           rgba(17, 17, 17, 0.12);
-  --border-light:          rgba(116, 195, 101, 0.25);
-  --border-glow:           rgba(116, 195, 101, 0.35);
+  --border-light:          rgba(159, 207, 73, 0.25);
+  --border-glow:           rgba(159, 207, 73, 0.35);
 
   --shadow-sm:             0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md:             0 8px 24px rgba(0, 0, 0, 0.10);

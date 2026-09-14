@@ -42,22 +42,21 @@ function getGalleryDataset() {
   }
 
   return [
-    { src: 'assets/images/1000032834_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/gallery/1000032834_professional_4k.webp', alt: 'Property exterior and garden path at The Groot Ooty', category: 'property' },
-    { src: 'assets/images/1000032835_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/gallery/1000032835_professional_4k.webp', alt: 'Misty Nilgiri mountain landscape', category: 'nature' },
-    { src: 'assets/images/1000032841_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/experience-images/1000032841_professional_4k.webp', alt: 'Property illuminated at night', category: 'campfire' },
-    { src: 'assets/images/1000032838_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/room-images/1000032838_professional_4k.webp', alt: 'A-frame wooden cabin exterior and interior', category: 'rooms', assignedRoom: 'aframe' },
-    { src: 'assets/images/1000032839_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/room-images/1000032839_professional_4k.webp', alt: 'Glass house panoramic forest view bedroom', category: 'rooms', assignedRoom: 'glasshouse' },
-    { src: 'assets/images/1000032836_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/room-images/1000032836_professional_4k.webp', alt: 'Luxurious suit spacious bedroom interior', category: 'rooms', assignedRoom: 'suite' },
-    { src: 'assets/images/1000032837_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/room-images/1000032837_professional_4k.webp', alt: 'Standard room cozy bedroom interior', category: 'rooms', assignedRoom: 'standard' },
-    { src: 'assets/images/IMG-20260821-WA0036_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/experience-images/IMG-20260821-WA0036_4k.webp', alt: 'Campfire evening under the Nilgiri stars', category: 'campfire' },
-    { src: 'assets/images/IMG-20260821-WA0041_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/experience-images/IMG-20260821-WA0041_4k.webp', alt: 'Authentic South Indian home-cooked meal spread', category: 'food' },
-    { src: 'assets/images/1000032840_professional_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/experience-images/1000032840_professional_4k.webp', alt: 'Lush Nilgiri tea foliage and greenery', category: 'nature' },
-    { src: 'assets/images/IMG-20260821-WA0034_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/gallery/IMG-20260821-WA0034_4k.webp', alt: 'Main stay entrance and courtyard', category: 'property' },
-    { src: 'assets/images/IMG-20260821-WA0037_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/gallery/IMG-20260821-WA0037_4k.webp', alt: 'A-frame Timber Architecture Detail', category: 'rooms', assignedRoom: 'aframe' },
-    { src: 'assets/images/gallery-new-img-1_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/room-images/gallery-new-img-1_4k.webp', alt: 'Boutique room detail and interior finish', category: 'rooms', assignedRoom: 'suite' },
-    { src: 'assets/images/gallery-new-img-2_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/room-images/gallery-new-img-2_4k.webp', alt: 'Glass house twilight forest view', category: 'rooms', assignedRoom: 'glasshouse' },
-    { src: 'assets/images/gallery-new-img-3_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/room-images/gallery-new-img-3_4k.webp', alt: 'Comfortable bedroom furnishings', category: 'rooms', assignedRoom: 'standard' },
-    { src: 'assets/images/gallery-new-img-7_4k.webp', fallback: 'https://jritiortuorrpcfkoupf.supabase.co/storage/v1/object/public/experience-images/gallery-new-img-7_4k.webp', alt: 'Outdoor garden campfire setup', category: 'campfire' }
+    { src: 'assets/images/garden_area_client.jpeg', alt: 'The Groot Garden Lawn & Surrounding Hills', category: 'property', assignedRoom: 'property' },
+    { src: 'assets/images/common_area_client.jpeg', alt: 'Common Lounge & Property Grounds', category: 'property', assignedRoom: 'property' },
+    { src: 'assets/images/common_area_1_client.jpeg', alt: 'Guest Gathering & Relaxation Area', category: 'property', assignedRoom: 'property' },
+    { src: 'assets/images/a_frame_client.jpeg', alt: 'A-frame Cabin Exterior & Architecture', category: 'rooms', assignedRoom: 'aframe' },
+    { src: 'assets/images/glasshouse_client.jpeg', alt: 'Glass house Panoramic Forest Immersion', category: 'rooms', assignedRoom: 'glasshouse' },
+    { src: 'assets/images/luxury_1_client.jpeg', alt: 'Luxurious suit Bedroom & Living Space', category: 'rooms', assignedRoom: 'suite' },
+    { src: 'assets/images/luxury_2_client.jpeg', alt: 'Luxurious suit Interior Seating Area', category: 'rooms', assignedRoom: 'suite' },
+    { src: 'assets/images/luxury_3_client.jpeg', alt: 'Luxurious suit Refined Teak Finishes', category: 'rooms', assignedRoom: 'suite' },
+    { src: 'assets/images/standard_1_client.jpeg', alt: 'Standard Room Warm Bedroom', category: 'rooms', assignedRoom: 'standard' },
+    { src: 'assets/images/standard_2_client.jpeg', alt: 'Standard Room Cozy Double Bed', category: 'rooms', assignedRoom: 'standard' },
+    { src: 'assets/images/1000032835_professional_4k.webp', alt: 'Nilgiri Morning Mist & Mountain Vista', category: 'nature', assignedRoom: 'property' },
+    { src: 'assets/images/1000032841_professional_4k.webp', alt: 'Evening Campfire Under Starlit Sky', category: 'campfire', assignedRoom: 'property' },
+    { src: 'assets/images/IMG-20260821-WA0036_4k.webp', alt: 'Outdoor Garden Gathering & Seating', category: 'campfire', assignedRoom: 'property' },
+    { src: 'assets/images/IMG-20260821-WA0041_4k.webp', alt: 'Fresh Authentic Home-Cooked Meals', category: 'food', assignedRoom: 'property' },
+    { src: 'assets/images/1000032840_professional_4k.webp', alt: 'Tea Plantation & Nature Trails', category: 'nature', assignedRoom: 'property' }
   ];
 }
 

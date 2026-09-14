@@ -8,8 +8,8 @@
   --admin-card-border: rgba(137, 217, 123, 0.2);
   --admin-text-primary: #FAF7F2;
   --admin-text-muted: rgba(250, 247, 242, 0.65);
-  --admin-accent: #74C365;
-  --admin-accent-glow: #89D97B;
+  --admin-accent: #9FCF49;
+  --admin-accent-glow: #9FCF49;
   --admin-danger: #FF5252;
   --admin-warning: #FFB74D;
   --admin-sidebar-w: 260px;
@@ -31,7 +31,7 @@ body.admin-body {
   justify-content: center;
   min-height: 100vh;
   padding: 1.5rem;
-  background: radial-gradient(circle at 50% 30%, rgba(116, 195, 101, 0.15) 0%, transparent 60%), #0C140D;
+  background: radial-gradient(circle at 50% 30%, rgba(159, 207, 73, 0.15) 0%, transparent 60%), #0C140D;
 }
 
 .admin-login-card {
@@ -108,7 +108,7 @@ body.admin-body {
 }
 
 .admin-badge {
-  background: rgba(116, 195, 101, 0.2);
+  background: rgba(159, 207, 73, 0.2);
   color: var(--admin-accent-glow);
   font-size: 0.72rem;
   font-weight: 700;
@@ -116,7 +116,7 @@ body.admin-body {
   letter-spacing: 0.1em;
   padding: 3px 8px;
   border-radius: 4px;
-  border: 1px solid rgba(116, 195, 101, 0.4);
+  border: 1px solid rgba(159, 207, 73, 0.4);
 }
 
 .admin-tabs {
@@ -142,9 +142,9 @@ body.admin-body {
 }
 
 .admin-tab-btn.active {
-  background: rgba(116, 195, 101, 0.15);
+  background: rgba(159, 207, 73, 0.15);
   color: var(--admin-accent-glow);
-  border-color: rgba(116, 195, 101, 0.35);
+  border-color: rgba(159, 207, 73, 0.35);
 }
 
 .admin-nav-actions {
@@ -415,7 +415,7 @@ body.admin-body {
 .admin-textarea:focus {
   outline: none;
   border-color: var(--admin-accent-glow);
-  box-shadow: 0 0 0 2px rgba(116, 195, 101, 0.25);
+  box-shadow: 0 0 0 2px rgba(159, 207, 73, 0.25);
 }
 
 /* Buttons */

@@ -1,2 +1,4 @@
 assets/images/originals_backup/
 scratch/
+.playwright-mcp/
+/*.png

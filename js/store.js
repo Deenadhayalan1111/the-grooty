@@ -28,8 +28,8 @@ const DEFAULT_ROOM_METADATA = {
     shortDescription: 'Warm, well-appointed room perfect for couples or solo travelers seeking a peaceful stay in the Nilgiris.',
     longDescription: 'Wake up to the crisp Nilgiri air in our Standard room. A cozy, thoughtfully furnished double bedroom designed for calm comfort with quality bedding, warm blankets, hot water, and a charming view of the surrounding mountain greenery.',
     maxGuests: 3,
-    image: _getImg('room-images', '1000032837_professional_4k.webp', 'assets/images/1000032837_professional_4k.webp'),
-    interiorImage: _getImg('room-images', '1000032837_professional_4k.webp', 'assets/images/1000032837_professional_4k.webp'),
+    image: 'assets/images/standard_1_client.jpeg',
+    interiorImage: 'assets/images/standard_2_client.jpeg',
     features: ['Double Bed', 'Hot Water 24/7', 'High-Speed Wi-Fi', 'Garden View'],
     amenities: [
       { label: 'Comfortable Double Bed' },
@@ -48,8 +48,8 @@ const DEFAULT_ROOM_METADATA = {
     shortDescription: 'Distinctive triangular architectural cabin with exposed timber beams, high ceilings, and forest ambiance.',
     longDescription: 'The A-frame is the signature stay of The Groot Ooty. Its distinctive triangular architecture, soaring ceilings, exposed natural wooden beams, and forest-framed windows create an unforgettable Nilgiri mountain experience.',
     maxGuests: 4,
-    image: _getImg('room-images', '1000032838_professional_4k.webp', 'assets/images/1000032838_professional_4k.webp'),
-    interiorImage: _getImg('room-images', '1000032838_professional_4k.webp', 'assets/images/1000032838_professional_4k.webp'),
+    image: 'assets/images/a_frame_client.jpeg',
+    interiorImage: 'assets/images/a_frame_client.jpeg',
     features: ['Signature Cabin', 'Forest Views', 'High Ceilings', 'Hot Water 24/7'],
     amenities: [
       { label: 'Signature A-frame Timber Architecture' },
@@ -68,8 +68,8 @@ const DEFAULT_ROOM_METADATA = {
     shortDescription: 'Our most expansive accommodation with elevated furnishings, plush king bed, and private lounge area.',
     longDescription: 'Indulge in The Groot\'s premium retreat. The Luxurious suit features generous living space, refined teak furnishings, plush king bedding, and an ambiance balancing authentic mountain tranquility with elevated comfort.',
     maxGuests: 6,
-    image: _getImg('room-images', '1000032836_professional_4k.webp', 'assets/images/1000032836_professional_4k.webp'),
-    interiorImage: _getImg('room-images', '1000032836_professional_4k.webp', 'assets/images/1000032836_professional_4k.webp'),
+    image: 'assets/images/luxury_1_client.jpeg',
+    interiorImage: 'assets/images/luxury_2_client.jpeg',
     features: ['King Bed', 'Spacious Suite', 'Lounge Seating', 'Hill Panoramas'],
     amenities: [
       { label: 'Expansive Suite Layout' },
@@ -88,8 +88,8 @@ const DEFAULT_ROOM_METADATA = {
     shortDescription: 'Panoramic glass walls immersing you directly in the lush green canopy of the Nilgiri hills.',
     longDescription: 'The Glass house provides a one-of-a-kind immersion in Ooty nature. Floor-to-ceiling glass panels replace traditional walls, surrounding you with the living forest while keeping you cozy and warm inside.',
     maxGuests: 3,
-    image: _getImg('room-images', '1000032839_professional_4k.webp', 'assets/images/1000032839_professional_4k.webp'),
-    interiorImage: _getImg('room-images', '1000032839_professional_4k.webp', 'assets/images/1000032839_professional_4k.webp'),
+    image: 'assets/images/glasshouse_client.jpeg',
+    interiorImage: 'assets/images/glasshouse_client.jpeg',
     features: ['Glass Wall Panorama', 'Forest Immersion', 'Hot Water 24/7', 'Nature Views'],
     amenities: [
       { label: 'Panoramic Glass Wall Design' },
@@ -120,22 +120,21 @@ function getMetadataForRoomName(dbRoomName) {
 
 // DEFAULT GALLERY ITEMS
 const DEFAULT_GALLERY = [
-  { id: 'gal-1', url: 'assets/images/1000032834_professional_4k.webp', title: 'The Groot Property Grounds & Garden', category: 'property', assignedRoom: 'property', enabled: true, order: 1 },
-  { id: 'gal-2', url: 'assets/images/1000032835_professional_4k.webp', title: 'Nilgiri Morning Mist & Mountain Vista', category: 'nature', assignedRoom: 'property', enabled: true, order: 2 },
-  { id: 'gal-3', url: 'assets/images/1000032838_professional_4k.webp', title: 'A-frame Cabin Exterior & Architecture', category: 'rooms', assignedRoom: 'aframe', enabled: true, order: 3 },
-  { id: 'gal-4', url: 'assets/images/1000032839_professional_4k.webp', title: 'Glass house Forest View Panorama', category: 'rooms', assignedRoom: 'glasshouse', enabled: true, order: 4 },
-  { id: 'gal-5', url: 'assets/images/1000032836_professional_4k.webp', title: 'Luxurious suit Bedroom & Living Space', category: 'rooms', assignedRoom: 'suite', enabled: true, order: 5 },
-  { id: 'gal-6', url: 'assets/images/1000032837_professional_4k.webp', title: 'Standard Room Warm Interior', category: 'rooms', assignedRoom: 'standard', enabled: true, order: 6 },
-  { id: 'gal-7', url: 'assets/images/1000032840_professional_4k.webp', title: 'Tea Plantation & Nature Trails', category: 'nature', assignedRoom: 'property', enabled: true, order: 7 },
-  { id: 'gal-8', url: 'assets/images/1000032841_professional_4k.webp', title: 'Evening Campfire Under Starlit Sky', category: 'campfire', assignedRoom: 'property', enabled: true, order: 8 },
-  { id: 'gal-9', url: 'assets/images/IMG-20260821-WA0034_4k.webp', title: 'Main Stay Entrance & Courtyard', category: 'property', assignedRoom: 'property', enabled: true, order: 9 },
-  { id: 'gal-10', url: 'assets/images/IMG-20260821-WA0036_4k.webp', title: 'Outdoor Garden Gathering & Seating', category: 'campfire', assignedRoom: 'property', enabled: true, order: 10 },
-  { id: 'gal-11', url: 'assets/images/IMG-20260821-WA0037_4k.webp', title: 'A-frame Timber Architecture Detail', category: 'rooms', assignedRoom: 'aframe', enabled: true, order: 11 },
-  { id: 'gal-12', url: 'assets/images/IMG-20260821-WA0041_4k.webp', title: 'Fresh Authentic Home-Cooked Meals', category: 'food', assignedRoom: 'property', enabled: true, order: 12 },
-  { id: 'gal-13', url: 'assets/images/gallery-new-img-1_4k.webp', title: 'Boutique Room Details & Decor', category: 'rooms', assignedRoom: 'suite', enabled: true, order: 13 },
-  { id: 'gal-14', url: 'assets/images/gallery-new-img-2_4k.webp', title: 'Glass house Twilight Glow', category: 'rooms', assignedRoom: 'glasshouse', enabled: true, order: 14 },
-  { id: 'gal-15', url: 'assets/images/gallery-new-img-3_4k.webp', title: 'Cozy Mountain Bedroom Setting', category: 'rooms', assignedRoom: 'standard', enabled: true, order: 15 },
-  { id: 'gal-16', url: 'assets/images/gallery-new-img-7_4k.webp', title: 'Outdoor Firepit Night Setting', category: 'campfire', assignedRoom: 'property', enabled: true, order: 16 }
+  { id: 'gal-1', url: 'assets/images/garden_area_client.jpeg', title: 'The Groot Garden Lawn & Surrounding Hills', category: 'property', assignedRoom: 'property', enabled: true, order: 1 },
+  { id: 'gal-2', url: 'assets/images/common_area_client.jpeg', title: 'Common Lounge & Property Grounds', category: 'property', assignedRoom: 'property', enabled: true, order: 2 },
+  { id: 'gal-3', url: 'assets/images/common_area_1_client.jpeg', title: 'Guest Gathering & Relaxation Area', category: 'property', assignedRoom: 'property', enabled: true, order: 3 },
+  { id: 'gal-4', url: 'assets/images/a_frame_client.jpeg', title: 'A-frame Cabin Exterior & Architecture', category: 'rooms', assignedRoom: 'aframe', enabled: true, order: 4 },
+  { id: 'gal-5', url: 'assets/images/glasshouse_client.jpeg', title: 'Glass house Panoramic Forest Immersion', category: 'rooms', assignedRoom: 'glasshouse', enabled: true, order: 5 },
+  { id: 'gal-6', url: 'assets/images/luxury_1_client.jpeg', title: 'Luxurious suit Bedroom & Living Space', category: 'rooms', assignedRoom: 'suite', enabled: true, order: 6 },
+  { id: 'gal-7', url: 'assets/images/luxury_2_client.jpeg', title: 'Luxurious suit Interior Seating Area', category: 'rooms', assignedRoom: 'suite', enabled: true, order: 7 },
+  { id: 'gal-8', url: 'assets/images/luxury_3_client.jpeg', title: 'Luxurious suit Refined Teak Finishes', category: 'rooms', assignedRoom: 'suite', enabled: true, order: 8 },
+  { id: 'gal-9', url: 'assets/images/standard_1_client.jpeg', title: 'Standard Room Warm Bedroom', category: 'rooms', assignedRoom: 'standard', enabled: true, order: 9 },
+  { id: 'gal-10', url: 'assets/images/standard_2_client.jpeg', title: 'Standard Room Cozy Double Bed', category: 'rooms', assignedRoom: 'standard', enabled: true, order: 10 },
+  { id: 'gal-11', url: 'assets/images/1000032835_professional_4k.webp', title: 'Nilgiri Morning Mist & Mountain Vista', category: 'nature', assignedRoom: 'property', enabled: true, order: 11 },
+  { id: 'gal-12', url: 'assets/images/1000032841_professional_4k.webp', title: 'Evening Campfire Under Starlit Sky', category: 'campfire', assignedRoom: 'property', enabled: true, order: 12 },
+  { id: 'gal-13', url: 'assets/images/IMG-20260821-WA0036_4k.webp', title: 'Outdoor Garden Gathering & Seating', category: 'campfire', assignedRoom: 'property', enabled: true, order: 13 },
+  { id: 'gal-14', url: 'assets/images/IMG-20260821-WA0041_4k.webp', title: 'Fresh Authentic Home-Cooked Meals', category: 'food', assignedRoom: 'property', enabled: true, order: 14 },
+  { id: 'gal-15', url: 'assets/images/1000032840_professional_4k.webp', title: 'Tea Plantation & Nature Trails', category: 'nature', assignedRoom: 'property', enabled: true, order: 15 }
 ];
 
 // DEFAULT SETTINGS
@@ -340,16 +339,17 @@ class GrootStore {
 
   getRoomPhotos(roomId) {
     const room = this.getRoom(roomId);
+    const slug = room ? (room.slug || '').toLowerCase() : (roomId || '').toLowerCase();
     const gallery = this.getGallery(false);
-    const assigned = gallery.filter(item => item.assignedRoom === roomId).map(item => item.url);
+    const assigned = gallery.filter(item => item.assignedRoom === slug || item.assignedRoom === roomId).map(item => item.url);
     
     const photos = [];
-    if (room && room.image) photos.push(room.image);
+    if (room && room.image && !photos.includes(room.image)) photos.push(room.image);
     if (room && room.interiorImage && !photos.includes(room.interiorImage)) photos.push(room.interiorImage);
     assigned.forEach(url => {
       if (!photos.includes(url)) photos.push(url);
     });
-    return photos;
+    return photos.length > 0 ? photos : ['assets/images/garden_area_client.jpeg'];
   }
 
   // SETTINGS API — Read-only immutable property settings

@@ -223,7 +223,7 @@ function renderDashboardOverview() {
               value="${r.price}"
               step="100"
               min="0"
-              style="width:95px; background:rgba(0,0,0,0.4); border:1px solid rgba(116,195,101,0.4); border-radius:6px; color:#FFFFFF; padding:6px 8px; font-weight:700; font-size:0.95rem;"
+              style="width:95px; background:rgba(0,0,0,0.4); border:1px solid rgba(159,207,73,0.4); border-radius:6px; color:#FFFFFF; padding:6px 8px; font-weight:700; font-size:0.95rem;"
             />
             <button onclick="saveQuickPrice('${r.id}')" class="admin-btn admin-btn-primary" style="padding:5px 12px; font-size:0.75rem;">Save</button>
           </div>

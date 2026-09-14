@@ -34,14 +34,14 @@
   background-color: var(--color-mantis);
   color: #FFFFFF;
   border-color: var(--color-mantis);
-  box-shadow: 0 4px 14px rgba(116, 195, 101, 0.30);
+  box-shadow: 0 4px 14px rgba(159, 207, 73, 0.30);
 }
 
 .btn-primary:hover {
-  background-color: #5ebd4e;
-  border-color: #5ebd4e;
+  background-color: #8EBF3E;
+  border-color: #8EBF3E;
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(116, 195, 101, 0.40);
+  box-shadow: 0 6px 20px rgba(159, 207, 73, 0.40);
   transform: translateY(-2px);
 }
 
@@ -98,9 +98,9 @@
 
 /* Ghost Button */
 .btn-ghost {
-  background-color: rgba(116, 195, 101, 0.12);
+  background-color: rgba(159, 207, 73, 0.12);
   color: var(--text-primary);
-  border-color: rgba(116, 195, 101, 0.25);
+  border-color: rgba(159, 207, 73, 0.25);
 }
 
 .btn-ghost:hover {
@@ -438,10 +438,16 @@
 
 .ooty-card-dist {
   margin-top: 0.75rem;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #FFFFFF;
-  display: flex;
+  background: #111e13;
+  border: 1px solid rgba(159, 207, 73, 0.4);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
