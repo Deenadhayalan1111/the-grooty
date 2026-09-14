@@ -19,96 +19,527 @@
   <link rel="stylesheet" href="css/footer.css?v=3.1" />
 
   <style>
+    /* =========================================================
+       THE GROOT OOTY — Contact Page Premium Scoped Styles
+       ========================================================= */
     .contact-layout {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: clamp(2.5rem, 5vw, 4.5rem);
+      grid-template-columns: 1.15fr 1fr;
+      gap: clamp(2rem, 3.5vw, 3rem);
       align-items: start;
       width: 100%;
       box-sizing: border-box;
     }
-    .contact-method-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
-      padding: 1.25rem;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: var(--radius-lg);
-      text-decoration: none;
-      color: #FFFFFF;
-      transition: all 0.2s ease;
-      margin-bottom: 0.85rem;
+
+    .contact-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 20px;
+      padding: clamp(1.5rem, 3.5vw, 2.25rem);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
       box-sizing: border-box;
       width: 100%;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
+      margin-bottom: 2rem;
     }
-    .contact-method-card > div:last-child {
-      flex: 1;
-      min-width: 0;
+
+    /* Groot Brand Green Treatment for Instant Inquiry & Direct Reach Cards */
+    .contact-branded-card {
+      background: linear-gradient(180deg, #F6FBF0 0%, #FAFCF7 60%, #FFFFFF 100%);
+      border: 1.5px solid rgba(159, 207, 73, 0.40);
+      box-shadow: 0 12px 32px rgba(159, 207, 73, 0.10), 0 2px 6px rgba(0, 0, 0, 0.03);
     }
+
+    .contact-branded-card .contact-card-badge {
+      background: rgba(159, 207, 73, 0.25);
+      border: 1px solid rgba(159, 207, 73, 0.50);
+      color: #35660D;
+    }
+
+    .contact-branded-card .contact-card-badge-dot {
+      background: #9FCF49;
+      box-shadow: 0 0 0 2px rgba(159, 207, 73, 0.35);
+    }
+
+    .contact-branded-card .contact-form-control {
+      background: #FFFFFF;
+      border: 1.5px solid rgba(159, 207, 73, 0.30);
+    }
+
+    .contact-branded-card .contact-form-control:hover {
+      border-color: #9FCF49;
+      background: #FFFFFF;
+    }
+
+    .contact-branded-card .contact-form-control:focus {
+      border-color: #9FCF49;
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3.5px rgba(159, 207, 73, 0.28);
+    }
+
+    .contact-branded-card .contact-method-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(159, 207, 73, 0.30);
+    }
+
+    .contact-branded-card .contact-method-card:hover {
+      background: #FFFFFF;
+      border-color: #9FCF49;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(159, 207, 73, 0.20);
+    }
+
+    .contact-branded-card .contact-method-card.whatsapp-card {
+      background: #F1F9E8;
+      border-color: rgba(159, 207, 73, 0.55);
+    }
+
+    .contact-branded-card .contact-method-card.whatsapp-card:hover {
+      background: #FFFFFF;
+      border-color: #25D366;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+    }
+
+    .contact-card-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: rgba(159, 207, 73, 0.15);
+      color: #3F7512;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.65rem;
+    }
+
+    .contact-card-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #9FCF49;
+      display: inline-block;
+    }
+
+    .contact-card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.4rem 0;
+      line-height: 1.25;
+    }
+
+    .contact-card-subtitle {
+      font-size: 0.875rem;
+      color: #4B5563;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Contact Form Layout */
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+      margin-bottom: 1.25rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .col-name {
+      grid-column: 1;
+    }
+
+    .col-phone {
+      grid-column: 2;
+    }
+
+    .col-email {
+      grid-column: 1 / -1;
+    }
+
+    .col-message {
+      grid-column: 1 / -1;
+    }
+
+    .contact-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .contact-form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #374151;
+    }
+
+    .contact-form-label .required-star {
+      color: #E11D48;
+      margin-left: 2px;
+    }
+
+    .contact-form-control {
+      width: 100%;
+      box-sizing: border-box;
+      height: 48px;
+      padding: 0 16px;
+      background: #F9FAFB;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #111827;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .contact-form-control::placeholder {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .contact-form-control:hover {
+      border-color: #D1D5DB;
+      background: #FFFFFF;
+    }
+
+    .contact-form-control:focus {
+      outline: none;
+      border-color: #9FCF49;
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3.5px rgba(159, 207, 73, 0.22);
+    }
+
+    textarea.contact-form-control {
+      height: auto;
+      min-height: 110px;
+      padding: 14px 16px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    /* WhatsApp Submit CTA */
+    .contact-submit-btn {
+      width: 100%;
+      height: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #25D366;
+      color: #FFFFFF;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .contact-submit-btn:hover {
+      background-color: #1EBE5D;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .contact-submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .contact-submit-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .contact-feedback-box {
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 1.25rem;
+      text-align: center;
+      line-height: 1.4;
+      box-sizing: border-box;
+    }
+
+    /* Contact Methods List */
+    .contact-methods-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .contact-method-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.15rem;
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #111827;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+    }
+
     .contact-method-card:hover {
-      background: rgba(255, 255, 255, 0.22);
-      transform: translateX(4px);
+      background: #FFFFFF;
+      border-color: #9FCF49;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(159, 207, 73, 0.15);
     }
+
+    .contact-method-card.whatsapp-card {
+      background: #F4FAF0;
+      border-color: rgba(159, 207, 73, 0.4);
+    }
+
+    .contact-method-card.whatsapp-card:hover {
+      background: #FFFFFF;
+      border-color: #25D366;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2);
+    }
+
     .contact-method-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: var(--radius-md);
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      color: #374151;
+      transition: all 0.2s ease;
     }
+
+    .contact-method-card:hover .contact-method-icon {
+      transform: scale(1.05);
+    }
+
     .contact-method-icon.whatsapp {
-      background: rgba(255, 255, 255, 0.2);
+      background: #25D366;
+      border-color: #25D366;
       color: #FFFFFF;
+      box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
     }
+
     .contact-method-icon.phone {
-      background: rgba(255, 255, 255, 0.25);
-      color: #FFFFFF;
+      background: rgba(159, 207, 73, 0.15);
+      border-color: rgba(159, 207, 73, 0.3);
+      color: #3F7512;
     }
+
     .contact-method-icon.instagram {
-      background: rgba(255, 255, 255, 0.25);
-      color: #FFFFFF;
+      background: rgba(225, 48, 108, 0.1);
+      border-color: rgba(225, 48, 108, 0.25);
+      color: #E1306C;
     }
+
     .contact-method-icon.location {
-      background: rgba(255, 255, 255, 0.25);
-      color: #FFFFFF;
+      background: rgba(159, 207, 73, 0.15);
+      border-color: rgba(159, 207, 73, 0.3);
+      color: #3F7512;
     }
+
+    .contact-method-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .contact-method-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6B7280;
+      margin-bottom: 2px;
+    }
+
+    .contact-method-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.3;
+    }
+
+    .contact-method-action {
+      font-size: 0.8rem;
+      color: #16A34A;
+      font-weight: 600;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .contact-method-address-text {
+      font-size: 0.9rem;
+      color: #374151;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    /* Right Column: Map & Timings */
     .map-frame {
-      border-radius: var(--radius-xl);
+      border-radius: 16px;
       overflow: hidden;
-      border: 1px solid var(--card-border);
+      border: 1px solid rgba(0, 0, 0, 0.08);
       aspect-ratio: 16/10;
-      box-shadow: var(--shadow-card);
-      background: var(--card-bg);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      background: #F3F4F6;
       width: 100%;
       box-sizing: border-box;
+      margin-bottom: 1.25rem;
     }
+
     .map-frame iframe {
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
     }
-    .card-dark {
+
+    .stay-timings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
       width: 100%;
       box-sizing: border-box;
-      max-width: 100%;
-      overflow: hidden;
     }
-    .card-dark .form-label {
-      color: #FFFFFF;
+
+    .timing-card {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 1.15rem 1rem;
+      text-align: center;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
     }
-    @media(max-width:900px){
-      .contact-layout { 
-        grid-template-columns: 1fr; 
-        gap: 2rem;
+
+    .timing-card:hover {
+      background: #FFFFFF;
+      border-color: #9FCF49;
+      box-shadow: 0 4px 12px rgba(159, 207, 73, 0.12);
+    }
+
+    .timing-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6B7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .timing-val {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.2;
+    }
+
+    .timing-note {
+      font-size: 0.75rem;
+      color: #6B7280;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    .contact-book-btn {
+      height: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 990px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
       }
-      .contact-method-card {
-        padding: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .contact-card {
+        padding: 1.25rem 1rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
+      }
+
+      .col-name, .col-phone, .col-email, .col-message {
+        grid-column: 1 / -1;
+      }
+
+      .contact-form-control {
+        height: 46px;
+        font-size: 0.92rem;
+        padding: 0 14px;
+      }
+
+      textarea.contact-form-control {
+        min-height: 100px;
+        padding: 12px 14px;
+      }
+
+      .contact-method-card {
+        padding: 0.85rem 1rem;
+        gap: 0.85rem;
+      }
+
+      .contact-method-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .stay-timings-grid {
+        gap: 0.75rem;
+      }
+
+      .timing-card {
+        padding: 1rem 0.75rem;
+      }
+
+      .timing-val {
+        font-size: 1.35rem;
       }
     }
   </style>
@@ -169,107 +600,136 @@
       </div>
 
       <div class="contact-layout">
-        <!-- Left: Contact Details & Quick Message -->
-        <div>
-          <div class="card-dark" data-reveal="fade-up" style="margin-bottom: 1.75rem;">
-            <!-- WhatsApp -->
-            <button onclick="quickWhatsApp()" class="contact-method-card" style="width:100%; text-align:left; cursor:pointer;">
-              <div class="contact-method-icon whatsapp">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </div>
-              <div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.85); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">WhatsApp (Fastest Response)</div>
-                <div style="font-size:1.1rem; font-weight:700; color:#FFFFFF; margin:2px 0;">+91 6382316323</div>
-                <div style="font-size:0.8rem; color:rgba(255,255,255,0.75);">Click to chat directly &rarr;</div>
-              </div>
-            </button>
+        <!-- Left: Direct Message Form & Quick Contact Channels -->
+        <div class="contact-left-col">
+          <!-- Direct Message Form Card (Main Priority) -->
+          <div class="contact-card contact-branded-card" data-reveal="fade-up">
+            <div class="contact-card-header">
+              <span class="contact-card-badge">
+                <span class="contact-card-badge-dot"></span>
+                Instant Inquiry
+              </span>
+              <h2 class="contact-card-title">Send a Direct Message</h2>
+              <p class="contact-card-subtitle">
+                Enter your name and note below to instantly open WhatsApp with your message pre-formatted.
+              </p>
+            </div>
 
-            <!-- Phone 1 -->
-            <a href="tel:6382316323" class="contact-method-card" data-phone="1">
-              <div class="contact-method-icon phone">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.2 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <form id="contact-form" onsubmit="event.preventDefault(); sendContactMessage();" novalidate>
+              <div class="contact-form-grid">
+                <div class="contact-form-group col-name">
+                  <label class="contact-form-label" for="contact-name">Your Name <span class="required-star">*</span></label>
+                  <input type="text" class="contact-form-control" id="contact-name" placeholder="Enter your name" required />
+                </div>
+                <div class="contact-form-group col-phone">
+                  <label class="contact-form-label" for="contact-phone">Your Phone <span class="required-star">*</span></label>
+                  <input type="tel" class="contact-form-control" id="contact-phone" placeholder="10-digit mobile number" required />
+                </div>
+                <div class="contact-form-group col-email">
+                  <label class="contact-form-label" for="contact-email">Your Email <span class="required-star">*</span></label>
+                  <input type="email" class="contact-form-control" id="contact-email" placeholder="Enter your email" required />
+                </div>
+                <div class="contact-form-group col-message">
+                  <label class="contact-form-label" for="contact-message">Message <span class="required-star">*</span></label>
+                  <textarea class="contact-form-control" id="contact-message" rows="4" placeholder="Hi, I would like to enquire about room availability, dates, or amenities..." required></textarea>
+                </div>
               </div>
-              <div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); font-weight:700; text-transform:uppercase;">Primary Phone</div>
-                <div style="font-size:1.05rem; font-weight:600; color:#FFFFFF;">6382316323</div>
-              </div>
-            </a>
 
-            <!-- Phone 2 -->
-            <a href="tel:7395965006" class="contact-method-card" data-phone="2">
-              <div class="contact-method-icon phone">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.2 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              </div>
-              <div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); font-weight:700; text-transform:uppercase;">Alternate Phone</div>
-                <div style="font-size:1.05rem; font-weight:600; color:#FFFFFF;">7395965006</div>
-              </div>
-            </a>
+              <div id="contact-feedback" class="contact-feedback-box" style="display:none;"></div>
 
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/the_groot_ooty/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
-              <div class="contact-method-icon instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </div>
-              <div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); font-weight:700; text-transform:uppercase;">Instagram</div>
-                <div style="font-size:1.05rem; font-weight:600; color:#FFFFFF;">@the_groot_ooty</div>
-              </div>
-            </a>
+              <button type="button" class="btn btn-whatsapp contact-submit-btn" id="contact-submit" onclick="sendContactMessage()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span>Send on WhatsApp</span>
+              </button>
+            </form>
+          </div>
 
-            <!-- Address -->
-            <div class="contact-method-card" style="cursor:default;">
-              <div class="contact-method-icon location">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); font-weight:700; text-transform:uppercase;">Property Address</div>
-                <div style="font-size:0.95rem; font-weight:500; color:#FFFFFF; line-height:1.5;">
-                  204, Showdown Road, Mellakshminarayanapuram, Pudumund, Ooty, Tamil Nadu 643001
+          <!-- Contact Channels Card -->
+          <div class="contact-card contact-branded-card" data-reveal="fade-up" data-delay="100">
+            <div class="contact-card-header">
+              <span class="contact-card-badge">
+                <span class="contact-card-badge-dot"></span>
+                Direct Reach
+              </span>
+              <h2 class="contact-card-title">Connect With Us</h2>
+              <p class="contact-card-subtitle">Reach out through any of our direct channels for immediate booking assistance.</p>
+            </div>
+
+            <div class="contact-methods-list">
+              <!-- WhatsApp -->
+              <button type="button" onclick="quickWhatsApp()" class="contact-method-card whatsapp-card" style="cursor:pointer;" aria-label="Chat on WhatsApp">
+                <div class="contact-method-icon whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div class="contact-method-info">
+                  <div class="contact-method-tag">WhatsApp (Fastest Response)</div>
+                  <div class="contact-method-val">+91 6382316323</div>
+                  <div class="contact-method-action">Click to chat directly &rarr;</div>
+                </div>
+              </button>
+
+              <!-- Phone 1 -->
+              <a href="tel:6382316323" class="contact-method-card" data-phone="1">
+                <div class="contact-method-icon phone">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.2 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="contact-method-info">
+                  <div class="contact-method-tag">Primary Phone</div>
+                  <div class="contact-method-val">6382316323</div>
+                </div>
+              </a>
+
+              <!-- Phone 2 -->
+              <a href="tel:7395965006" class="contact-method-card" data-phone="2">
+                <div class="contact-method-icon phone">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.2 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="contact-method-info">
+                  <div class="contact-method-tag">Alternate Phone</div>
+                  <div class="contact-method-val">7395965006</div>
+                </div>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/the_groot_ooty/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                <div class="contact-method-icon instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+                <div class="contact-method-info">
+                  <div class="contact-method-tag">Instagram</div>
+                  <div class="contact-method-val">@the_groot_ooty</div>
+                </div>
+              </a>
+
+              <!-- Address -->
+              <div class="contact-method-card" style="cursor:default;">
+                <div class="contact-method-icon location">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="contact-method-info">
+                  <div class="contact-method-tag">Property Address</div>
+                  <div class="contact-method-address-text">
+                    204, Showdown Road, Mellakshminarayanapuram, Pudumund, Ooty, Tamil Nadu 643001
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Quick Message Box -->
-          <div class="card-dark" data-reveal="fade-up" data-delay="100">
-            <h3 style="font-family:var(--font-display); font-size:1.35rem; color:#FFFFFF; margin-bottom:0.5rem;">
-              Send a Direct Message
-            </h3>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.75); margin-bottom:1.25rem;">
-              Enter your name and note below to instantly open WhatsApp with your message pre-formatted.
-            </p>
-            <div class="form-group">
-              <label class="form-label" for="contact-name">Your Name</label>
-              <input type="text" class="form-control" id="contact-name" placeholder="Enter your name" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-phone">Your Phone</label>
-              <input type="tel" class="form-control" id="contact-phone" placeholder="10-digit mobile number" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-email">Your Email</label>
-              <input type="email" class="form-control" id="contact-email" placeholder="Enter your email" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-message">Message</label>
-              <textarea class="form-control" id="contact-message" rows="3" placeholder="Hi, I would like to enquire about..."></textarea>
-            </div>
-            <div id="contact-feedback" style="display:none; font-size:0.85rem; padding:10px; border-radius:var(--radius-md); margin-bottom:1rem; text-align:center;"></div>
-            <button class="btn btn-whatsapp btn-block btn-lg" id="contact-submit" onclick="sendContactMessage()">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Send on WhatsApp
-            </button>
-          </div>
         </div>
 
         <!-- Right: Map Embed & Directions -->
-        <div>
-          <div data-reveal="fade-left">
-            <h2 style="font-family:var(--font-display); font-size:1.6rem; color:var(--color-obsidian); margin-bottom:1rem;">
-              Find Us in Pudumund, Ooty
-            </h2>
-            <div class="map-frame" style="margin-bottom:1.5rem;">
+        <div class="contact-right-col" data-reveal="fade-left">
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <span class="contact-card-badge">
+                <span class="contact-card-badge-dot"></span>
+                Location
+              </span>
+              <h2 class="contact-card-title">Find Us in Pudumund, Ooty</h2>
+              <p class="contact-card-subtitle">Nestled quietly in the Nilgiri hills, just a short drive from Ooty town center.</p>
+            </div>
+
+            <div class="map-frame">
               <iframe
                 src="https://maps.google.com/maps?q=11.4067,76.7032&z=15&output=embed"
                 title="The Groot Ooty location map"
@@ -279,21 +739,30 @@
             </div>
 
             <!-- Check-in Cards -->
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
-              <div class="card-dark" style="text-align:center; padding:1.25rem;">
-                <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.85); margin-bottom:0.25rem;">Check-in</div>
-                <div style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:#FFFFFF;">12:00 PM</div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); margin-top:2px;">Early arrival on request</div>
+            <div class="stay-timings-grid">
+              <div class="timing-card">
+                <div class="timing-header">
+                  <span>🕒</span>
+                  <span>Check-in</span>
+                </div>
+                <div class="timing-val">12:00 PM</div>
+                <div class="timing-note">Early arrival on request</div>
               </div>
 
-              <div class="card-dark" style="text-align:center; padding:1.25rem;">
-                <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.85); margin-bottom:0.25rem;">Check-out</div>
-                <div style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:#FFFFFF;">11:00 AM</div>
-                <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); margin-top:2px;">Late departure on request</div>
+              <div class="timing-card">
+                <div class="timing-header">
+                  <span>🕚</span>
+                  <span>Check-out</span>
+                </div>
+                <div class="timing-val">11:00 AM</div>
+                <div class="timing-note">Late departure on request</div>
               </div>
             </div>
 
-            <a href="booking.html" class="btn btn-primary btn-block btn-lg">Check Room Availability</a>
+            <a href="booking.html" class="btn btn-primary btn-block contact-book-btn">
+              <span>Check Room Availability</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -365,9 +834,9 @@
 
       const showFeedback = (text, isError) => {
         feedback.style.display = 'block';
-        feedback.style.backgroundColor = isError ? 'rgba(255,82,82,0.1)' : 'rgba(159,207,73,0.1)';
-        feedback.style.color = isError ? '#ff5252' : '#9FCF49';
-        feedback.style.border = `1px solid ${isError ? '#ff5252' : '#9FCF49'}`;
+        feedback.style.backgroundColor = isError ? 'rgba(239, 68, 68, 0.08)' : 'rgba(159, 207, 73, 0.12)';
+        feedback.style.color = isError ? '#DC2626' : '#2F6E12';
+        feedback.style.border = `1px solid ${isError ? 'rgba(239, 68, 68, 0.3)' : 'rgba(159, 207, 73, 0.4)'}`;
         feedback.innerText = text;
       };
 
